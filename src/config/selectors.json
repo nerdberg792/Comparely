@@ -1,0 +1,23 @@
+{
+    "blinkit": {
+      "loginButton": "a[href='/login']",
+      "phoneNumberInput": "input[name='phone']",
+      "submitButton": "button[type='submit']",
+      "otpInput": "input[type='text'][maxlength='6']",
+      "cartPageUrl": "https://www.blinkit.com/cart"
+    },
+    "zepto": {
+      "loginButton": ".login-button-class",
+      "phoneNumberInput": ".phone-input-class",
+      "submitButton": ".submit-button-class",
+      "otpInput": ".otp-input-class",
+      "cartPageUrl": "https://www.zeptonow.com/cart"
+    },
+    "instamart": {
+      "loginButton": ".instamart-login-button",
+      "phoneNumberInput": ".instamart-phone-input",
+      "submitButton": ".instamart-submit-button",
+      "otpInput": ".instamart-otp-input",
+      "cartPageUrl": "https://www.swiggy.com/instamart/cart"
+    }
+  }

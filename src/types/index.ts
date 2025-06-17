@@ -1,3 +1,4 @@
+import {Browser } from "puppeteer" ; 
 
 export interface SessionData {
     sessionId: string;
@@ -6,8 +7,12 @@ export interface SessionData {
     url: string;
     domSnapshot?: string;
     apiSessionDetails?: Record<string, any>; 
+    localStorage?: { [key: string]: string }; // Optional, as some sessions might not have it
+    sessionStorage?: { [key: string]: string };
   }
-  
+export interface BrowserData {
+  browser : Browser ; 
+}
   export interface SelectorConfig {
     loginButton: string;
     phoneNumberInput: string;
@@ -16,13 +21,17 @@ export interface SessionData {
     cartPageUrl: string;
     addToCartButton?: string; 
     variantSelector?: string; 
+    locationSelector?: string; 
+    locationInput?:string ; 
+    locationSelect?:string ; 
+    locationSubmit?:string ; 
   }
-  
+
   export interface PlatformSelectors {
-    blinkit: SelectorConfig;
+    //blinkit: SelectorConfig;
     zepto: SelectorConfig;
-    instamart: SelectorConfig;
-    [key: string]: SelectorConfig; 
+    //instamart: SelectorConfig;
+    //[key: string]: SelectorConfig; 
   }
   
   export interface AddProductsRequestBody {
@@ -38,7 +47,11 @@ export interface SessionData {
   }
   
   export interface PriceBreakdown {
-    [key: string]: string; 
+    [productName: string]: ItemPriceDetails; 
+  }
+  export interface ItemPriceDetails {
+    current: string;
+    original: string; 
   }
   
   export interface CartDetails {
